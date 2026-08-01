@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Number Guessing Game
 
 ## Project Description
@@ -61,3 +62,7 @@ Columns:
 
 ## Author
 S. Padhumaimathi
+=======
+# Flask_Number_Guessing_App
+A Number Guessing Game Developed Using Python Flask and MySQL
+>>>>>>> c0045b05c4d63058c069249e1b6a5b1ecfb45d97
