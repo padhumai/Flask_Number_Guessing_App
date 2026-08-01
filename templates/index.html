@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🎯 Number Guessing Game</h1>
+
+        <!-- Difficulty Selection -->
+        <form method="POST">
+            <label><b>Enter Your Name</b></label><br><br>
+
+<input
+    type="text"
+    name="player_name"
+    placeholder="Enter your name"
+    required>
+
+<br><br>
+
+            <label><b>Select Difficulty</b></label><br><br>
+
+
+            <select name="difficulty">
+                <option value="Easy"
+                    {% if difficulty=="Easy" %}selected{% endif %}>
+                    Easy (1-20)
+                </option>
+
+                <option value="Medium"
+                    {% if difficulty=="Medium" %}selected{% endif %}>
+                    Medium (1-50)
+                </option>
+
+                <option value="Hard"
+                    {% if difficulty=="Hard" %}selected{% endif %}>
+                    Hard (1-100)
+                </option>
+
+            </select>
+
+            <br><br>
+
+            <button type="submit">
+                Start Game
+            </button>
+
+        </form>
+
+        <hr>
+
+        <!-- Guess Form -->
+        <form method="POST">
+
+            <input
+                type="number"
+                name="guess"
+                placeholder="Enter your guess"
+                required>
+
+            <br><br>
+
+            <button type="submit">
+                Guess
+            </button>
+
+        </form>
+
+        <h2>{{ message }}</h2>
+
+        <h3>Attempts : {{ attempts }}/5</h3>
+
+        <h3>Remaining : {{ remaining }}</h3>
+
+        <h3>Score : {{ score }}</h3>
+
+        <h3>Difficulty : {{ difficulty }}</h3>
+
+        <br>
+
+        <a href="{{ url_for('play_again') }}">
+            <button>
+                🔄 Play Again
+            </button>
+        </a>
+
+    </div>
+
+</body>
+
+</html>
